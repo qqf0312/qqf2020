@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+import "blockchain.proto";
+
+message VerifyTxReq {
+    uint64 valid_until_block = 1;
+    bytes hash = 2;
+    bytes signature = 3;
+    Crypto crypto = 4;
+    bytes tx_hash = 5;
+    bytes signer = 6; // public key only set in BlockReq
+    string nonce = 7;
+    uint32 chain_id = 8;
+    uint64 quota = 9;
+    bytes value = 10;
+    bytes chain_id_v1 = 11;
+}
+
+message VerifyBlockReq {
+    uint64 height = 1;
+    uint64 round = 2;
+    CompactBlock block = 3;
+}
+
+message VerifyBlockResp {
+    uint64 height = 1;
+    uint64 round = 2;
+    bool pass = 3;
+    Block block = 4;
+}
+
+message BlockTxHashes {
+    uint64 height = 1;
+    repeated bytes tx_hashes = 2;
+    uint64 block_quota_limit = 3;
+    AccountGasLimit account_quota_limit = 4;
+    bool check_quota = 5;
+    bytes admin_address = 6;
+    uint32 version = 7;
+}
+
+message BlockTxHashesReq {
+    uint64 height = 1;
+}
+
+message Miscellaneous {
+    uint32 chain_id = 1;
+    bytes chain_id_v1 = 2;
+}
+
+message MiscellaneousReq {
+}

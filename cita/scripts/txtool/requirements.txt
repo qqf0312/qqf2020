@@ -1,0 +1,8 @@
+jsonrpcclient[requests]==2.4.2
+py_solc==1.2.2
+simplejson==3.11.1
+protobuf==3.4.0
+pathlib==1.0.1
+ecdsa
+pysha3>=1.0.2
+pysodium

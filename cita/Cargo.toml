@@ -1,0 +1,27 @@
+[workspace]
+members = ["cita-auth"
+,"cita-jsonrpc"
+,"cita-chain"
+,"cita-bft"
+,"cita-network"
+,"cita-executor"
+,"cita-forever"
+,"tools/create-key-addr"
+,"tools/snapshot-tool"
+,"tools/create-genesis"
+,"tools/relayer-parser"
+,"tests/chain-executor-mock"
+,"tests/consensus-mock"
+,"tests/chain-performance-by-mq"
+,"tests/box-executor"
+,"tests/json-test"
+]
+
+[profile.bench]
+opt-level = 3
+debug = false
+rpath = false
+lto = false
+debug-assertions = false
+codegen-units = 1
+panic = 'unwind'
